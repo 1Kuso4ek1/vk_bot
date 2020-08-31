@@ -5,9 +5,9 @@ int main()
   for(;;)
   {
     bot.Update();
-    if(bot.GetLastMessage() == "ping")
+    if(bot.GetLastMessage() == u8"ping")
     {
-      bot.Send("Pong!", 2000000001);
+      bot.Send(u8"Pong!", 2000000001);
     }
   }
 }
