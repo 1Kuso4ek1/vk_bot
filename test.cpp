@@ -7,7 +7,7 @@ int main()
     bot.Update();
     if(bot.GetLastMessage() == u8"ping")
     {
-      bot.Send(u8"Pong!", 2000000001);
+      bot.Send(u8"Pong!", bot.GetChatId());
     }
   }
 }
