@@ -16,6 +16,9 @@ public:
 	void Update();
 	void Send(std::string text, int chat_id);
 
+	int GetChatId();
+	int GetFromId();
+
 	std::string GetLastMessage();
 private:
 	static size_t write_data(char* ptr, size_t size, size_t nmemb, std::string* data);
@@ -36,5 +39,6 @@ private:
 
 	int chat_id;
 	int ts;
+	int from_id;
 };
 

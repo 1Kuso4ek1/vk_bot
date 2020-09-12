@@ -41,8 +41,11 @@ void vk_bot::Update()
 	}
 	root = Parse();
 	ts = stoi(root["ts"].asString());
+	//std::cout << content << std::endl;
 	if (!root["updates"].empty()) {
 		message = root["updates"][0]["object"]["message"]["text"].asString();
+		chat_id = root["updates"][0]["object"]["message"]["peer_id"].asInt();
+		from_id = root["updates"][0]["object"]["message"]["from_id"].asInt();
 	}
 }
 
@@ -55,6 +58,16 @@ void vk_bot::Send(std::string text, int chat_id)
 		std::cout << "Error!" << std::endl;
 		std::cout << curl_easy_strerror(res) << std::endl;
 	}
+}
+
+int vk_bot::GetChatId()
+{
+	return chat_id;
+}
+
+int vk_bot::GetFromId()
+{
+	return from_id;
 }
 
 std::string vk_bot::GetLastMessage()
