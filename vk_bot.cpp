@@ -6,7 +6,7 @@ vk_bot::vk_bot(std::string api_key) : api_key(api_key)
 	curl_global_init(CURL_GLOBAL_DEFAULT);
 	if (curl)
 	{
-		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, TRUE);
+		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, true);
 		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
 		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &content);
